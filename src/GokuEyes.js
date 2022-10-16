@@ -3,7 +3,7 @@ import Goku from './images/vegito.png';
 import Eyes from './images/eyes.png';
 import chatbubble from './images/bubblechat.png';
 const GokuEyes = () => {
-    const [chat, setchat] = useState(true);
+    const [chat, setchat] = useState(false);
     const [chatmsg, setchatmsg] = useState(['Power comes in response to a need, not a desire.', 'It looks like they only want me, and that’s exactly who they’ll get', 'I am going to be a lot stronger than I ever was!']);
     useEffect(() => {
 
