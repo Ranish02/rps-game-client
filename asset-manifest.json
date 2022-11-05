@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/rps-game-client/static/css/main.eb9c9826.css",
+    "main.js": "/rps-game-client/static/js/main.6e59cdda.js",
+    "static/media/vegito.png": "/rps-game-client/static/media/vegito.f1376a904c72ba87dcbc.png",
+    "static/media/bubblechat.png": "/rps-game-client/static/media/bubblechat.d0e9e38f82b456804ab7.png",
+    "static/media/Paper.png": "/rps-game-client/static/media/Paper.6f47e39a655ace4cad08.png",
+    "index.html": "/rps-game-client/index.html",
+    "main.eb9c9826.css.map": "/rps-game-client/static/css/main.eb9c9826.css.map",
+    "main.6e59cdda.js.map": "/rps-game-client/static/js/main.6e59cdda.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eb9c9826.css",
+    "static/js/main.6e59cdda.js"
+  ]
+}
