@@ -119,12 +119,22 @@ const GameManager = ({ socket }) => {
             setmyinput(0);
             setGameState("winner_room");
             setWinner(winner);
+            setcounter(13);
         }
         )
         //input syncing
         socket.on("incoming_input", (data) => {
             console.log("Opponent Selected" + data);
             setoppinput(data);
+            setcounter(10);
+            setTimeout(() => {
+                if (myinput == 0 && oppinput !== 0) {
+                    setmyinput(getRndInteger(1, 3));
+                    console.log("Input gareko abastha")
+                    SendAllInput();
+                }
+            }, 10000)
+
 
             //(true);
         });
@@ -148,6 +158,7 @@ const GameManager = ({ socket }) => {
             }
             setTimeout(() => {
                 setGameState("game_room");
+                console.log("game ko thau pugyo")
             }, 3000)
         }
 
@@ -283,7 +294,7 @@ const GameManager = ({ socket }) => {
     const SendAllInput = async () => {
         // UpdateGameInput();
         console.log("sending this input");
-        console.log(usersinput);
+        // console.log(usersinput);
         //UpdateGameInput();
         const messagedata = [
 
@@ -309,12 +320,15 @@ const GameManager = ({ socket }) => {
 
 
 
-
+    const regame = () => {
+        setGameState("game_room");
+    }
 
 
     const handleGame = (data) => {
         if (myinput === 0) {
             setmyinput(data);
+            setcounter(10);
         }
         else {
             console.log("Already inputted" + myinput);
@@ -345,69 +359,79 @@ const GameManager = ({ socket }) => {
 
     return (
         <div className='flex justify-between items-center h-screen'>
-            <div className='w-full max-w-[400px] h-[600px] md:flex items-center justify-center hidden'>
-
+            <div className='w-[400px] hidden lg:flex'>
                 <GokuEyes />
             </div>
-            <div className='w-full'>
+            <div className='lg:flex w-full'>
                 <div className='flex justify-center w-full h-[600px] '>
-                    {
-                        GameState == "join_room" ?
-                            (
-                                //join room page here
-                                <div className='gradientoverlay text-center w-[800px] shadow-2xl rounded-lg'>
-                                    <div className='border-b-4 py-4 text-3xl font-bold '>
-                                        Join Room
-                                    </div>
-
-                                    <div className=' flex justify-center items-center rainbow py-4 px-4 h-[80%] '>
-                                        <div>
-                                            <div>
-                                                <input type="text" className='p-4 rounded-lg' placeholder='User123' onChange={(event) => { setusername(event.target.value) }} />
-                                            </div>
-                                            <div className='mt-8'>
-                                                <input type="text" className='p-4 rounded-lg' placeholder='room123' onChange={(event) => { setroom(event.target.value) }} />
-                                            </div>
-                                            <div className='bg-[#333] text-white h-[50px] mt-8 text-center cursor-pointer'>
-                                                <button onClick={joinroom} className="w-full h-full">
-                                                    Join
-                                                </button>
-                                            </div>
+                    <div className='gradientoverlay text-center w-[700px] lg:w-[800px] shadow-2xl rounded-lg mt-8'>
+                        {
+                            GameState == "join_room" ?
+                                (
+                                    //join room page here
+                                    <>
+                                        <div className='border-b-4 border-gray-500 py-4 text-3xl font-bold bg-white'>
+                                            Join Room
                                         </div>
 
-                                    </div>
+                                        <div className=' flex justify-center items-center rainbow py-4 px-4 h-[80%] '>
+                                            <div>
+                                                <div>
+                                                    <input type="text" className='p-4 rounded-lg' placeholder='User123' onChange={(event) => { setusername(event.target.value) }} />
+                                                </div>
+                                                <div className='mt-8'>
+                                                    <input type="text" className='p-4 rounded-lg' placeholder='room123' onChange={(event) => { setroom(event.target.value) }} />
+                                                </div>
+                                                <div className='bg-[#333] text-white h-[50px] mt-8 text-center cursor-pointer'>
+                                                    <button onClick={joinroom} className="w-full h-full">
+                                                        Join
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </>
 
 
-                                </div>
 
+                                )
+                                : GameState == "wait_room" ? (
+                                    //waiting room section here
+                                    <WaitRoom />
+                                ) : GameState == "ready_room" ? (
+                                    //waiting room section here
+                                    <ReadyRoom readyplayer={readyplayer} opponentName={opponentName} />
+                                ) : GameState == "game_room" ? (
+                                    <>
+                                        <GameInput handleGame={handleGame} roundCounter={roundCounter} wincount={wincount} myinput={myinput} counter={counter} />
 
-                            )
-                            : GameState == "wait_room" ? (
-                                //waiting room section here
-                                <WaitRoom />
-                            ) : GameState == "ready_room" ? (
-                                //waiting room section here
-                                <ReadyRoom readyplayer={readyplayer} opponentName={opponentName} />
-                            ) : GameState == "game_room" ? (
-                                <>
-                                    <GameInput handleGame={handleGame} roundCounter={roundCounter} wincount={wincount} />
-                                    <UsersList users={users} room={room} username={username} />
-                                </>
-                                // <AnotherAnim handleGame={handleGame} />
-                                //<GameAnim handleGame={handleGame} />
-                            ) : GameState == "winner_room" ? (
-                                <>
-                                    <Winner_screen winner={Winner} username={username} opponentname={opponentName} roundCounter={roundCounter} wincount={wincount} />
-                                    <UsersList users={users} room={room} username={username} />
-                                </>
-                                // <AnotherAnim handleGame={handleGame} />
-                                //<GameAnim handleGame={handleGame} />
-                            ) : (
-                                ''
-                            )
+                                    </>
+                                    // <AnotherAnim handleGame={handleGame} />
+                                    //<GameAnim handleGame={handleGame} />
+                                ) : GameState == "winner_room" ? (
+                                    <>
+                                        <Winner_screen winner={Winner} username={username} opponentname={opponentName} roundCounter={roundCounter} wincount={wincount} regame={regame} />
 
-                    }
+                                    </>
+                                    // <AnotherAnim handleGame={handleGame} />
+                                    //<GameAnim handleGame={handleGame} />
+                                ) : (
+                                    ''
+                                )
 
+                        }
+
+                    </div>
+
+                </div>
+                <div >
+                    <div className='h-full'>
+                        {GameState == "winner_room" || GameState == "game_room" ? (
+                            <UsersList users={users} room={room} username={username} myinput={myinput} oppinput={oppinput} />
+                        ) :
+                            ""}
+                    </div>
                 </div>
             </div>
         </div>

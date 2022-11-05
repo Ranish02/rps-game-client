@@ -10,7 +10,7 @@ import AnotherAnim from "./components/AnotherAnim";
 
 import Game from "./Game";
 
-const socket = io.connect("http://localhost:3002/");
+const socket = io.connect("https://rps-server-backend123.herokuapp.com/");
 function App() {
   const [isivisible, setIsVisible] = useState(false);
 
@@ -20,7 +20,7 @@ function App() {
         <button onClick={() => {
           setIsVisible(v => !v);
         }}>
-          Mount
+          Mount 
         </button>
       </div> */}
       <div className="">

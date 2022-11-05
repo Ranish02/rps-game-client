@@ -3,8 +3,7 @@ import ScaleLoader from "react-spinners/ScaleLoader";
 
 const WaitRoom = () => {
     return (
-        <div className='flex justify-center items-center font-bold text-center text-3xl'>
-
+        <div className='flex justify-center items-center font-bold text-center text-3xl h-full'>
             <div>
                 <div>
                     Room joined

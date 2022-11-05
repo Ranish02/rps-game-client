@@ -43,10 +43,7 @@ const Socketcmd = ({ socket, username, room }) => {
         await socket.emit("startGame",);
     }
 
-    const updateUsersList = () => {
-        console.log("Up req made");
 
-    }
     // const starter = setInterval(() => {
     //     console.log('Interval triggered');
     // }, 1000);
@@ -87,11 +84,7 @@ const Socketcmd = ({ socket, username, room }) => {
                     Send
                 </button>
             </div>
-            <div>
-                <button onClick={updateUsersList}>
-                    Update
-                </button>
-            </div>
+
             <div>
                 <button onClick={starttimer}>
                     Start Timer
