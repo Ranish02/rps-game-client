@@ -49,31 +49,33 @@ const GokuEyes = () => {
 
     }
     return (
-        <div className=''>
-            <img src={Goku} alt="" id="anchor" className='w-[200px]' />
-            <div className=' flex h-[0px] w relative'>
-                <img src={Eyes} alt="" className='flex absolute z-20 top-[-140px] left-[80px] eye mb-4 w-[22px] ' />
-                <img src={Eyes} alt="" className='flex absolute top-[-140px] left-[110px] eye w-[22px] ' />
-                <div className='mouth flex absolute  w-[20px] h-[15px] top-[-112px] left-[99px] ' onMouseOver={showchatbubble} onMouseOut={hidechatbubble}>
+        <div className='flex justify-center '>
+            <div>
+                <img src={Goku} alt="" id="anchor" className='w-[300px] ' />
+                <div className=' flex h-[0px] w relative'>
+                    <img src={Eyes} alt="" className='flex absolute z-20 top-[-200px] left-[125px] eye mb-4 w-[25px] ' />
+                    <img src={Eyes} alt="" className='flex absolute top-[-200px] left-[170px] eye w-[25px] ' />
+                    <div className='mouth flex absolute  w-[20px] h-[15px] top-[-112px] left-[99px] ' onMouseOver={showchatbubble} onMouseOut={hidechatbubble}>
 
-                </div>
-                {chat ? (
-                    <div className="flex">
-                        <div className="relative w-[300px] h-[100px] ">
-                            <img src={chatbubble} alt="" className="z-[150px] relative top-[-335px] left-[140px]" />
-                            <div className="z-[250px] top-[-300px] left-[180px] absolute text-center w-[220px] h-[120px] break-all text-xs flex items-center p-3 font-bold">
-                                {chatmsg[[Math.floor(Math.random() * chatmsg.length)]]}
+                    </div>
+                    {chat ? (
+                        <div className="flex">
+                            <div className="relative w-[300px] h-[100px] ">
+                                <img src={chatbubble} alt="" className="z-[150px] relative top-[-335px] left-[300px]" />
+                                <div className="z-[250px] top-[-300px] left-[340px] absolute text-center w-[220px] h-[120px] break-all text-xs flex items-center p-3 font-bold">
+                                    {chatmsg[[Math.floor(Math.random() * chatmsg.length)]]}
+                                </div>
+
                             </div>
 
                         </div>
+                    ) : (
+                        null
+                    )}
 
-                    </div>
-                ) : (
-                    null
-                )}
+                </div>
 
             </div>
-
         </div>
     );
 }
