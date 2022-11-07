@@ -19,7 +19,7 @@ const WinnerScreen = ({ winner, username, opponentname, wincount, roundCounter, 
 
 
                 <div>
-                    <div className='flex justify-evenly mb-20 font-bold bg-[#FFF] py-2 border-t-2 border-gray-300 w-full'>
+                    <div className='flex justify-evenly mb-20 font-bold bg-[#FFF] py-2 border-t-2 border-gray-300 w-full mystroke'>
 
                         <div className='text-[#0f0] border-x px-16'>
                             Win

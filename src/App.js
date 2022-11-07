@@ -16,6 +16,7 @@ function App() {
 
   return (
     <div >
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/UAParser.js/0.7.19/ua-parser.min.js"></script>
       {/* <div className='bg-[#adadad] text-white p-2 text-center'>
         <button onClick={() => {
           setIsVisible(v => !v);

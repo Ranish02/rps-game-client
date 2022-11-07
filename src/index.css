@@ -60,3 +60,8 @@ body {
         background-position: right;
     }
 }
+
+.mystroke {
+    -webkit-text-stroke: 10px rgb(0, 0, 0);
+    -webkit-text-fill-color: white;
+}

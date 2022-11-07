@@ -9,7 +9,7 @@ import UsersList from './components/Users';
 //import Game from './Game';
 import GokuEyes from './GokuEyes';
 import Winner_screen from "./components/Winner_screen";
-
+import { UAParser } from 'ua-parser-js';
 
 const GameManager = ({ socket }) => {
     const [username, setusername] = useState("Player");
@@ -355,12 +355,23 @@ const GameManager = ({ socket }) => {
         console.log(usersinput);
         console.log("---------------");
     }
-
+    var ua = new UAParser();
+    var result = ua.getResult();
+    // console.log(result);
+    console.log(result.device.type);
+    const devicetype = result.device.type;
+    if (devicetype == "mobile") {
+        var showGoku = false;
+    }
+    else {
+        var showGoku = true;
+    }
 
     return (
         <div className='flex justify-between items-center h-screen'>
             <div className='w-[400px] hidden lg:flex'>
-                <GokuEyes />
+                <GokuEyes showGoku={showGoku} />
+
             </div>
             <div className='lg:flex w-full'>
                 <div className='flex justify-center w-full h-[600px] '>
