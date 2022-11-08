@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import AnotherAnim from './components/AnotherAnim';
-import GameAnim from './components/GameAnim';
+
 import GameInput from './components/GameInput';
 import ReadyRoom from './components/ReadyRoom';
 //import Users from './components/Users';
 import WaitRoom from './components/WaitRoom';
 import UsersList from './components/Users';
-//import Game from './Game';
-import GokuEyes from './GokuEyes';
+
+//import GokuEyes from './GokuEyes';
 import Winner_screen from "./components/Winner_screen";
 import { UAParser } from 'ua-parser-js';
 
@@ -355,22 +354,22 @@ const GameManager = ({ socket }) => {
         console.log(usersinput);
         console.log("---------------");
     }
-    var ua = new UAParser();
-    var result = ua.getResult();
-    // console.log(result);
-    console.log(result.device.type);
-    const devicetype = result.device.type;
-    if (devicetype == "mobile") {
-        var showGoku = false;
-    }
-    else {
-        var showGoku = true;
-    }
+    // var ua = new UAParser();
+    // var result = ua.getResult();
+    // // console.log(result);
+    // console.log(result.device.type);
+    // const devicetype = result.device.type;
+    // if (devicetype == "mobile") {
+    //     var showGoku = false;
+    // }
+    // else {
+    //     var showGoku = true;
+    // }
 
     return (
         <div className='flex justify-between items-center h-screen'>
             <div className='w-[400px] hidden lg:flex'>
-                <GokuEyes showGoku={showGoku} />
+                {/* <GokuEyes /> */}
 
             </div>
             <div className='lg:flex w-full'>

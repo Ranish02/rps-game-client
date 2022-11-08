@@ -3,9 +3,9 @@ import Goku from './images/vegito.png';
 import Eyes from './images/eyes.png';
 import chatbubble from './images/bubblechat.png';
 
-const GokuEyes = ({ showGoku }) => {
+const GokuEyes = () => {
     //device detect
-    console.log(showGoku);
+    //console.log(showGoku);
     const [chat, setchat] = useState(false);
     const [chatmsg, setchatmsg] = useState(['Power comes in response to a need, not a desire.', 'It looks like they only want me, and that’s exactly who they’ll get', 'I am going to be a lot stronger than I ever was!']);
 
@@ -17,34 +17,34 @@ const GokuEyes = ({ showGoku }) => {
 
     useEffect(() => {
 
-        if (showGoku) {
-            const anchor = document.getElementById('anchor');
-            const rekt = anchor.getBoundingClientRect();
-            const anchorx = rekt.left + rekt.width / 2;
-            const anchory = rekt.top + rekt.height / 2;
-            console.log("Horw");;
-            document.addEventListener('mousemove', (e) => {
-                const mousex = e.clientX;
-                const mousey = e.clientY;
-                const angleDeg = angle(mousex, mousey, anchorx, anchory);
+        //if (showGoku) {
+        const anchor = document.getElementById('anchor');
+        const rekt = anchor.getBoundingClientRect();
+        const anchorx = rekt.left + rekt.width / 2;
+        const anchory = rekt.top + rekt.height / 2;
+        console.log("Horw");
+        document.addEventListener('mousemove', (e) => {
+            const mousex = e.clientX;
+            const mousey = e.clientY;
+            const angleDeg = angle(mousex, mousey, anchorx, anchory);
 
-                const eyes = document.querySelectorAll('.eye');
-                eyes.forEach(eye => {
-                    eye.style.transform = `rotate(${90 + angleDeg}deg)`;
+            const eyes = document.querySelectorAll('.eye');
+            eyes.forEach(eye => {
+                eye.style.transform = `rotate(${90 + angleDeg}deg)`;
 
-                })
-            });
-            function angle(cx, cy, ex, ey) {
-                const dy = ey - cy;
-                const dx = ex - cx;
-                const rad = Math.atan2(dy, dx);
-                const deg = rad * 180 / Math.PI;
-                return deg;
-            }
+            })
+        });
+        function angle(cx, cy, ex, ey) {
+            const dy = ey - cy;
+            const dx = ex - cx;
+            const rad = Math.atan2(dy, dx);
+            const deg = rad * 180 / Math.PI;
+            return deg;
         }
-        else {
+        // }
+        // else {
 
-        }
+        // }
 
 
     },);
