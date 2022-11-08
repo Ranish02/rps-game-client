@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/rps-game-client/static/css/main.b5206705.css",
-    "main.js": "/rps-game-client/static/js/main.fd6d85b7.js",
+    "main.css": "/rps-game-client/static/css/main.7d3535a7.css",
+    "main.js": "/rps-game-client/static/js/main.35762cf7.js",
     "static/media/vegito.png": "/rps-game-client/static/media/vegito.f1376a904c72ba87dcbc.png",
     "static/media/bubblechat.png": "/rps-game-client/static/media/bubblechat.d0e9e38f82b456804ab7.png",
     "static/media/Paper.png": "/rps-game-client/static/media/Paper.6f47e39a655ace4cad08.png",
     "index.html": "/rps-game-client/index.html",
-    "main.b5206705.css.map": "/rps-game-client/static/css/main.b5206705.css.map",
-    "main.fd6d85b7.js.map": "/rps-game-client/static/js/main.fd6d85b7.js.map"
+    "main.7d3535a7.css.map": "/rps-game-client/static/css/main.7d3535a7.css.map",
+    "main.35762cf7.js.map": "/rps-game-client/static/js/main.35762cf7.js.map"
   },
   "entrypoints": [
-    "static/css/main.b5206705.css",
-    "static/js/main.fd6d85b7.js"
+    "static/css/main.7d3535a7.css",
+    "static/js/main.35762cf7.js"
   ]
 }
