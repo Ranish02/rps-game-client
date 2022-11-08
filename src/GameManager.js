@@ -35,6 +35,7 @@ const GameManager = ({ socket }) => {
     const [Winner, setWinner] = useState("TBD");
 
     const [GameState, setGameState] = useState("join_room");
+    const [ErrMsg, setErrMsg] = useState("");
 
     const [wincount, setwincount] = useState([
         0,
@@ -107,6 +108,14 @@ const GameManager = ({ socket }) => {
         )
         //will receive msg and call on any message or input in the server
         socket.on("received_message", (data) => {
+            if (data.message == "Room already full") {
+                console.log("Room is full");
+                setGameState("join_room");
+                setErrMsg("Room is full try other room id");
+                setTimeout(() => {
+                    setErrMsg("");
+                }, 3000)
+            }
             console.log("received data" + data);
             setmessages((list) => [...list, data]);
         })
@@ -366,14 +375,17 @@ const GameManager = ({ socket }) => {
     //     var showGoku = true;
     // }
 
-    return (
-        <div className='flex justify-between items-center h-screen'>
-            <div className='w-[400px] hidden lg:flex'>
-                {/* <GokuEyes /> */}
 
-            </div>
+    //add div for gokueyes
+    //     <div className='w-[400px] hidden lg:flex'>
+    //     {/* <GokuEyes /> */}
+
+    // </div>
+    return (
+        <div className='flex justify-between items-center h-[97vh]'>
+
             <div className='lg:flex w-full'>
-                <div className='flex justify-center w-full h-[600px] '>
+                <div className='flex justify-center w-full h-[600px] mt-24 lg:mt-0 '>
                     <div className='gradientoverlay text-center w-[700px] lg:w-[800px] shadow-2xl rounded-lg mt-8'>
                         {
                             GameState == "join_room" ?
@@ -383,7 +395,7 @@ const GameManager = ({ socket }) => {
                                         <div className='border-b-4 border-gray-500 py-4 text-3xl font-bold bg-white'>
                                             Join Room
                                         </div>
-
+                                        <div className='text-[#ff4848] font-bold'>{ErrMsg != "" ? (ErrMsg) : ""}</div>
                                         <div className=' flex justify-center items-center rainbow py-4 px-4 h-[80%] '>
                                             <div>
                                                 <div>
@@ -444,6 +456,7 @@ const GameManager = ({ socket }) => {
                     </div>
                 </div>
             </div>
+
         </div>
     );
 }

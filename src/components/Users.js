@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 const Users = ({ users, room, username }) => {
 
     return (
-        <div className=' p-3  flex justify-center h-full lg:mr-48 '>
-            <div className='bg-[#333] rounded-lg text-white text-center  w-[700px] lg:w-full lg:ml-4 mt-8 lg:px-8'>
+        <div className='p-3 flex justify-center h-full lg:mr-48 '>
+            <div className='bg-[#333] rounded-lg text-white text-center  w-[700px] lg:w-full lg:ml-4 pt-8 mt-4 lg:px-8'>
                 <div className='font-bold border-b mt-4 '>
                     Users
                 </div>

@@ -16,7 +16,6 @@ function App() {
 
   return (
     <div >
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/UAParser.js/0.7.19/ua-parser.min.js"></script>
       {/* <div className='bg-[#adadad] text-white p-2 text-center'>
         <button onClick={() => {
           setIsVisible(v => !v);
@@ -33,11 +32,12 @@ function App() {
 
 
         {/* <GameManager socket={socket} /> */}
-        <div className="text-right">
-          by
-          <a href="https://ranishkunwar.com.np/"> Ranish Kunwar</a>
-        </div>
 
+
+      </div>
+      <div className="text-right mt-32 lg:mt-0">
+        by
+        <a href="https://ranishkunwar.com.np/"> Ranish Kunwar</a>
       </div>
 
     </div>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-family: Comic Sans MS, Comic Sans;
     cursor: url('https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/512/external-cursor-interface-kiranshastry-lineal-color-kiranshastry.png'), pointer;
 }
 
@@ -62,6 +62,6 @@ body {
 }
 
 .mystroke {
-    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    -webkit-text-stroke: 1px rgb(119, 119, 119);
     /* -webkit-text-fill-color: white; */
 }
