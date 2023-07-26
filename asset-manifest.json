@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/rps-game-client/static/css/main.8bc32abe.css",
-    "main.js": "/rps-game-client/static/js/main.a78dd341.js",
+    "main.js": "/rps-game-client/static/js/main.35d330c0.js",
     "static/media/vegito.png": "/rps-game-client/static/media/vegito.f1376a904c72ba87dcbc.png",
     "static/media/bubblechat.png": "/rps-game-client/static/media/bubblechat.d0e9e38f82b456804ab7.png",
     "static/media/Paper.png": "/rps-game-client/static/media/Paper.6f47e39a655ace4cad08.png",
     "index.html": "/rps-game-client/index.html",
     "main.8bc32abe.css.map": "/rps-game-client/static/css/main.8bc32abe.css.map",
-    "main.a78dd341.js.map": "/rps-game-client/static/js/main.a78dd341.js.map"
+    "main.35d330c0.js.map": "/rps-game-client/static/js/main.35d330c0.js.map"
   },
   "entrypoints": [
     "static/css/main.8bc32abe.css",
-    "static/js/main.a78dd341.js"
+    "static/js/main.35d330c0.js"
   ]
 }
